@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Título principal */
+h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+/* Subtítulos */
+h3 {
+    color: #34495e;
+    margin-bottom: 5px;
+}
+
+/* Resultados */
+p {
+    background-color: white;
+    padding: 10px;
+    border-left: 5px solid #3498db;
+    border-radius: 5px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Efecto hover */
+p:hover {
+    background-color: #ecf5ff;
+    transform: scale(1.01);
+    transition: 0.2s;
+}
+
+/* Separación visual por partes */
+h1:nth-of-type(2),
+h1:nth-of-type(3),
+h1:nth-of-type(4),
+h1:nth-of-type(5) {
+    margin-top: 40px;
+}

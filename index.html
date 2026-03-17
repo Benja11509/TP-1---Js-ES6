@@ -1,43 +1,154 @@
-    <!DOCTYPE html>
-    <link rel="stylesheet" href="estilo.css">
-    <html>
-    <head>
-        <title>TP1 JS</title>
-    </head>
-    <body>
-    <h1>Parte 1</h1>
-    <h3>Ej1 </h3>
-    <p id="nombre1"></p>
-    <p id="nombre2"></p>
-    <h3>Ej2 </h3>
-    <p id="letras"></p>
-    <h3>Ej3 </h3>
-    <p id="maximo"></p>
-    <h3>Ej4 </h3>
-    <p id="password"></p>
-    <h1>Parte 2</h1>
-    <h3>Ej5 </h3>
-    <p id="sumaArray"></p>
-    <h3>Ej6 </h3>
-    <p id="mayorArray"></p>
-    <h3>Ej7 </h3>
-    <p id="pares"></p>
-    <h1>Parte 3</h1>
-    <h3>Ej8 </h3>
-    <p id="descripcionUsuario"></p>
-    <h3>Ej9 </h3>
-    <p id="activarUsuario"></p>
-    <h3>Ej10 </h3>
-    <p id="totalProductos"></p>
-    <h1>Parte 4</h1>
-    <h3>Ej11 </h3>
-    <p id="nombres"></p>
-    <h3>Ej12 </h3>
-    <p id="mayores"></p>
-    <h3>Ej13 </h3>
-    <h3>Ej14 </h3>
-    <h3>Ej15 </h3>
-    <script src="tp1.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TP1 JS Interactivo</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
 
-    </body>
-    </html>
+<h1>TP1 JavaScript Interactivo</h1>
+
+<!-- PARTE 1 -->
+<div class="card">
+<h2>Ej1 - Formatear Nombre</h2>
+<input id="ej1" placeholder="Nombre">
+<button onclick="uiEj1()">Ejecutar</button>
+<p id="r1"></p>
+</div>
+
+<div class="card">
+<h2>Ej2 - Contar letras</h2>
+<input id="ej2" placeholder="Texto">
+<button onclick="uiEj2()">Ejecutar</button>
+<p id="r2"></p>
+</div>
+
+<div class="card">
+<h2>Ej3 - Número mayor</h2>
+<input id="a" placeholder="A">
+<input id="b" placeholder="B">
+<input id="c" placeholder="C">
+<button onclick="uiEj3()">Ejecutar</button>
+<p id="r3"></p>
+</div>
+
+<div class="card">
+<h2>Ej4 - Password</h2>
+<input id="pass" placeholder="Password">
+<button onclick="uiEj4()">Validar</button>
+<p id="r4"></p>
+</div>
+
+<!-- PARTE 2 -->
+<div class="card">
+<h2>Ej5 - Sumar array</h2>
+<input id="arr1" placeholder="1,2,3">
+<button onclick="uiEj5()">Ejecutar</button>
+<p id="r5"></p>
+</div>
+
+<div class="card">
+<h2>Ej6 - Mayor array</h2>
+<input id="arr2" placeholder="1,2,3">
+<button onclick="uiEj6()">Ejecutar</button>
+<p id="r6"></p>
+</div>
+
+<div class="card">
+<h2>Ej7 - Pares</h2>
+<input id="arr3" placeholder="1,2,3">
+<button onclick="uiEj7()">Ejecutar</button>
+<p id="r7"></p>
+</div>
+
+<!-- PARTE 3 -->
+<div class="card">
+<h2>Ej8 - Usuario</h2>
+<button onclick="uiEj8()">Mostrar</button>
+<p id="r8"></p>
+</div>
+
+<div class="card">
+<h2>Ej9 - Activar usuario</h2>
+<button onclick="uiEj9()">Activar</button>
+<p id="r9"></p>
+</div>
+
+<div class="card">
+<h2>Ej10 - Total productos</h2>
+<button onclick="uiEj10()">Calcular</button>
+<p id="r10"></p>
+</div>
+
+<!-- PARTE 4 -->
+<div class="card">
+<h2>Ej11 - map</h2>
+<button onclick="uiEj11()">Mostrar</button>
+<p id="r11"></p>
+</div>
+
+<div class="card">
+<h2>Ej12 - filter</h2>
+<button onclick="uiEj12()">Mostrar</button>
+<p id="r12"></p>
+</div>
+
+<div class="card">
+<h2>Ej13 - reduce</h2>
+<button onclick="uiEj13()">Mostrar</button>
+<p id="r13"></p>
+</div>
+
+<!-- PARTE 5 -->
+<div class="card">
+<h2>Ej14 - Destructuring</h2>
+<button onclick="uiEj14()">Mostrar</button>
+<p id="r14"></p>
+</div>
+
+<div class="card">
+<h2>Ej15 - Spread</h2>
+<button onclick="uiEj15()">Mostrar</button>
+<p id="r15"></p>
+</div>
+
+<!-- PARTE 6 -->
+<div class="card">
+<h2>Ej16 - Buscar producto</h2>
+<input id="buscar" placeholder="Mouse">
+<button onclick="uiEj16()">Buscar</button>
+<p id="r16"></p>
+</div>
+
+<div class="card">
+<h2>Ej17 - Productos caros</h2>
+<button onclick="uiEj17()">Mostrar</button>
+<p id="r17"></p>
+</div>
+
+<div class="card">
+<h2>Ej18 - Promedio</h2>
+<input id="arr4" placeholder="10,8,6,9">
+<button onclick="uiEj18()">Calcular</button>
+<p id="r18"></p>
+</div>
+
+<!-- API -->
+<div class="card">
+<h2>Desafío API</h2>
+
+<button onclick="uiAPI1()">Ver usuarios</button>
+
+<input id="idApi" placeholder="ID">
+<button onclick="uiAPI2()">Buscar</button>
+
+<input id="nameApi" placeholder="Nombre">
+<input id="edadApi" placeholder="Edad">
+<button onclick="uiAPI3()">Crear</button>
+
+<p id="rApi"></p>
+</div>
+
+<script src="tp1.js"></script>
+</body>
+</html>

@@ -1,46 +1,91 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f6f8;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     margin: 0;
-    padding: 20px;
+    padding: 30px;
+    color: white;
 }
 
-/* Título principal */
+/* Título */
 h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 5px;
-    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-/* Subtítulos */
-h3 {
-    color: #34495e;
-    margin-bottom: 5px;
+/* Cards */
+.card {
+    background: white;
+    color: #333;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Botones */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #2a5298;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #1e3c72;
 }
 
 /* Resultados */
 p {
-    background-color: white;
+    background: #f1f1f1;
     padding: 10px;
-    border-left: 5px solid #3498db;
-    border-radius: 5px;
-    margin-top: 0;
-    margin-bottom: 15px;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-/* Efecto hover */
-p:hover {
-    background-color: #ecf5ff;
-    transform: scale(1.01);
-    transition: 0.2s;
+* {
+    box-sizing: border-box;
 }
 
-/* Separación visual por partes */
-h1:nth-of-type(2),
-h1:nth-of-type(3),
-h1:nth-of-type(4),
-h1:nth-of-type(5) {
-    margin-top: 40px;
+.card {
+    width: 350px;
+    max-width: 100%;
+}
+
+/* ARREGLO DE INPUTS */
+input {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* CONTENEDOR MÁS CENTRADO */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

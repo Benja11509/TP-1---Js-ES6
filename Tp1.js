@@ -1,159 +1,143 @@
+
 function formatearNombre(nombre) {
-    let primeraLetra = nombre[0].toUpperCase();
-    let resto = nombre.substring(1).toLowerCase();
-    return primeraLetra + resto;
+  return nombre.charAt(0).toUpperCase() + nombre.slice(1).toLowerCase();
 }
+
 function contarLetras(texto) {
-    let contador = 0;
-
-    for (let i = 0; i < texto.length; i++) {
-        if (texto[i] !== " ") {
-            contador++;
-        }
-    }
-
-    return contador;
+  return texto.replace(/\s/g, "").length;
 }
+
 function maximo(a, b, c) {
-    let mayor = a;
-
-    if (b > mayor) {
-        mayor = b;
-    }
-    if (c > mayor) {
-        mayor = c;
-    }
-
-    return mayor;
+  let mayor = a;
+  if (b > mayor) mayor = b;
+  if (c > mayor) mayor = c;
+  return mayor;
 }
-function validarPassword(password) {
-    let tieneNumero = false;
 
-    if (password.length < 8) {
-        return false;
-    }
-
-    for (let i = 0; i < password.length; i++) {
-        if (!isNaN(password[i]) && password[i] !== " ") {
-            tieneNumero = true;
-        }
-    }
-
-    return tieneNumero;
+function validarPassword(pass) {
+  return pass.length >= 8 && /\d/.test(pass);
 }
-function sumarArray(numeros) {
-    let suma = 0;
 
-    for (let i = 0; i < numeros.length; i++) {
-        suma += numeros[i];
-    }
-
-    return suma;
+function sumarArray(arr) {
+  let suma = 0;
+  for (let n of arr) suma += n;
+  return suma;
 }
-function mayorNumero(numeros) {
-    let mayor = numeros[0];
 
-    for (let i = 1; i < numeros.length; i++) {
-        if (numeros[i] > mayor) {
-            mayor = numeros[i];
-        }
-    }
-
-    return mayor;
+function mayorNumero(arr) {
+  let mayor = arr[0];
+  for (let n of arr) if (n > mayor) mayor = n;
+  return mayor;
 }
-function obtenerPares(numeros) {
-    let pares = [];
 
-    for (let i = 0; i < numeros.length; i++) {
-        if (numeros[i] % 2 === 0) {
-            pares.push(numeros[i]);
-        }
-    }
-
-    return pares;
+function obtenerPares(arr) {
+  return arr.filter(n => n % 2 === 0);
 }
+
+/* =========================
+   DATOS
+========================= */
+
 const usuario = {
   nombre: "Ana",
   edad: 20,
-  activo: true
+  activo: false
 };
 
-function descripcionUsuario(usuario) {
-  return `${usuario.nombre} tiene ${usuario.edad} anios`;
-}
-function activarUsuario(usuario) {
-  usuario.activo = true;
-}
-activarUsuario(usuario);
+const productos = [
+  { nombre: "Mouse", precio: 10 },
+  { nombre: "Teclado", precio: 25 },
+  { nombre: "Monitor", precio: 200 }
+];
 
-const productos = [ 
-{nombre:"Mouse", precio:10},
-{nombre:"Teclado", precio:25},
-{nombre:"Monitor", precio:200}
-]
-function calcularTotal(productos) {
-  let total = 0;
-
-  for (let i = 0; i < productos.length; i++) {
-    total += productos[i].precio;
-  }
-
-  return total;
-}
 const usuarios = [
   { nombre: "Ana", edad: 17 },
   { nombre: "Juan", edad: 25 },
   { nombre: "Pedro", edad: 30 }
 ];
+
+/* =========================
+   PARTE 3
+========================= */
+
+function descripcionUsuario(u) {
+  return `${u.nombre} tiene ${u.edad} años`;
+}
+
+function activarUsuario(u) {
+  u.activo = true;
+}
+
+function calcularTotal(productos) {
+  return productos.reduce((acc, p) => acc + p.precio, 0);
+}
+
+/* =========================
+   PARTE 4
+========================= */
+
 function obtenerNombres(usuarios) {
-  return usuarios.map(usuario => usuario.nombre);
+  return usuarios.map(u => u.nombre);
 }
 
 function obtenerMayores(usuarios) {
-  return usuarios.filter(usuario => usuario.edad >= 18);
+  return usuarios.filter(u => u.edad >= 18);
 }
-document.getElementById("activarUsuario").textContent =
-"Usuario activo: " + usuario.activo;
-document.getElementById("activarUsuario").textContent =
-"Usuario activo: " + usuario.activo;
-console.log(descripcionUsuario(usuario));
 
-document.getElementById("nombre1").textContent =
-formatearNombre("JUAN");
+function sumarEdades(usuarios) {
+  return usuarios.reduce((acc, u) => acc + u.edad, 0);
+}
 
-document.getElementById("nombre2").textContent =
-formatearNombre("mARIA");
+/* =========================
+   PARTE 5
+========================= */
 
-document.getElementById("letras").textContent = 
-"Letras:  " + contarLetras("que mandan!!");
+const producto = { nombre: "Notebook", precio: 1000 };
 
+const { nombre, precio } = producto;
 
-document.getElementById("maximo").textContent =
-"El numero mayor es: " + maximo(10, 25, 7);
+const productoConStock = { ...producto, stock: 5 };
 
-document.getElementById("password").textContent =
-"Password valida: " + validarPassword("CampusORt123");
+/* =========================
+   PARTE 6
+========================= */
 
-document.getElementById("sumaArray").textContent =
-"Suma del array: " + sumarArray([1,8,5]);
+function buscarProducto(productos, nombre) {
+  return productos.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
+}
 
-document.getElementById("mayorArray").textContent =
-"Mayor numero del array: " + mayorNumero([4,7,1,20,3]);
+function productosCaros(productos) {
+  return productos.filter(p => p.precio > 50);
+}
 
-document.getElementById("pares").textContent =
-"Numeros pares: " + obtenerPares([1,2,3,4,5,6,7,8,9,10]);
+function promedio(nums) {
+  let suma = nums.reduce((acc, n) => acc + n, 0);
+  return suma / nums.length;
+}
 
-document.getElementById("descripcionUsuario").textContent =
-descripcionUsuario(usuario);
+/* =========================
+   API
+========================= */
 
-document.getElementById("activarUsuario").textContent =
-"Usuario activo: " + usuario.activo;
+let usuariosAPI = [
+  { id: 1, nombre: "Ana", edad: 20 },
+  { id: 2, nombre: "Juan", edad: 15 },
+  { id: 3, nombre: "Pedro", edad: 30 }
+];
 
-document.getElementById("totalProductos").textContent =
-"Precio total: " + calcularTotal(productos);
+function obtenerUsuarios() {
+  return usuariosAPI;
+}
 
-document.getElementById("nombres").textContent =
-"Nombres: " + obtenerNombres(usuarios);
+function obtenerUsuarioPorId(id) {
+  return usuariosAPI.find(u => u.id === id);
+}
 
-document.getElementById("mayores").textContent =
-"Usuarios mayores: " + JSON.stringify(obtenerMayores(usuarios));
+function crearUsuario(nombre, edad) {
+  const nuevo = {
+    id: usuariosAPI.length + 1,
+    nombre,
+    edad
+  };
+  usuariosAPI.push(nuevo);
+}

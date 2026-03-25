@@ -1,154 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>TP1 JS Interactivo</title>
-  <link rel="stylesheet" href="estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1 JS Interactivo</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
+    <nav class="card">
+        <h2>Menú de Ejercicios</h2>
+        <select onchange="showEjercicio(this.value)">
+            <option value="">Seleccionar ejercicio</option>
+            <option value="e1">1. Formatear Nombre</option>
+            <option value="e2">2. Contar Letras</option>
+            <option value="e3">3. Número Máximo</option>
+            <option value="e4">4. Validar Password</option>
+            <option value="e5">5. Sumar Array</option>
+            <option value="e6">6. Mayor Número en Array</option>
+            <option value="e7">7. Obtener Pares</option>
+            <option value="e8">8. Descripción Usuario</option>
+            <option value="e9">9. Activar Usuario</option>
+            <option value="e10">10. Precio Total</option>
+            <option value="e11">11. Map</option>
+            <option value="e12">12. Filter</option>
+            <option value="e13">13. Reduce</option>
+            <option value="e14">14. Destructuring</option>
+            <option value="e15">15. Spread</option>
+            <option value="e16">16. Buscar Producto</option>
+            <option value="e17">17. Productos Caros</option>
+            <option value="e18">18. Promedio</option>
+            <option value="de">Desafío Usuarios</option>
+        </select>
+    </nav>
 
-<h1>TP1 JavaScript Interactivo</h1>
+    <main>
+        <div id="e1" class="card" style="display: none;">
+            <h3>1. Formatear Nombre</h3>
+            <input id="nombre" placeholder="Ingresar nombre">
+            <button onclick="formatearNombre()">Probar</button>
+            <p id="EJ1"></p>
+        </div>
 
-<!-- PARTE 1 -->
-<div class="card">
-<h2>Ej1 - Formatear Nombre</h2>
-<input id="ej1" placeholder="Nombre">
-<button onclick="uiEj1()">Ejecutar</button>
-<p id="r1"></p>
-</div>
+        <div id="e2" class="card" style="display: none;">
+            <h3>2. Contar Letras</h3>
+            <input id="texto" placeholder="Ingresar texto">
+            <button onclick="contarLetras()">Probar</button>
+            <p id="EJ2"></p>
+        </div>
 
-<div class="card">
-<h2>Ej2 - Contar letras</h2>
-<input id="ej2" placeholder="Texto">
-<button onclick="uiEj2()">Ejecutar</button>
-<p id="r2"></p>
-</div>
+        <div id="e3" class="card" style="display: none;">
+            <h3>3. Número Máximo</h3>
+            <input id="numeroA" placeholder="Primer número">
+            <input id="numeroB" placeholder="Segundo número">
+            <input id="numeroC" placeholder="Tercer número">
+            <button onclick="maximo()">Probar</button>
+            <p id="EJ3"></p>
+        </div>
 
-<div class="card">
-<h2>Ej3 - Número mayor</h2>
-<input id="a" placeholder="A">
-<input id="b" placeholder="B">
-<input id="c" placeholder="C">
-<button onclick="uiEj3()">Ejecutar</button>
-<p id="r3"></p>
-</div>
+        <div id="e4" class="card" style="display: none;">
+            <h3>4. Validar Password</h3>
+            <input id="password" placeholder="Ingresar contraseña">
+            <button onclick="validarPassword()">Probar</button>
+            <p id="EJ4"></p>
+        </div>
 
-<div class="card">
-<h2>Ej4 - Password</h2>
-<input id="pass" placeholder="Password">
-<button onclick="uiEj4()">Validar</button>
-<p id="r4"></p>
-</div>
+        <div id="e5" class="card" style="display: none;">
+            <h3>5. Sumar Array</h3>
+            <input id="arraySuma" placeholder="1,2,3,4">
+            <button onclick="sumarArray()">Probar</button>
+            <p id="EJ5"></p>
+        </div>
 
-<!-- PARTE 2 -->
-<div class="card">
-<h2>Ej5 - Sumar array</h2>
-<input id="arr1" placeholder="1,2,3">
-<button onclick="uiEj5()">Ejecutar</button>
-<p id="r5"></p>
-</div>
+        <div id="e6" class="card" style="display: none;">
+            <h3>6. Mayor Número en Array</h3>
+            <input id="arrayMayor" placeholder="1,2,3,4">
+            <button onclick="mayorNumero()">Probar</button>
+            <p id="EJ6"></p>
+        </div>
 
-<div class="card">
-<h2>Ej6 - Mayor array</h2>
-<input id="arr2" placeholder="1,2,3">
-<button onclick="uiEj6()">Ejecutar</button>
-<p id="r6"></p>
-</div>
+        <div id="e7" class="card" style="display: none;">
+            <h3>7. Obtener Pares</h3>
+            <input id="arrayPares" placeholder="1,2,3,4">
+            <button onclick="obtenerPares()">Probar</button>
+            <p id="EJ7"></p>
+        </div>
 
-<div class="card">
-<h2>Ej7 - Pares</h2>
-<input id="arr3" placeholder="1,2,3">
-<button onclick="uiEj7()">Ejecutar</button>
-<p id="r7"></p>
-</div>
+        <div id="e8" class="card" style="display: none;">
+            <h3>8. Descripción Usuario</h3>
+            <button onclick="descripcionUsuario()">Probar</button>
+            <p id="EJ8"></p>
+        </div>
 
-<!-- PARTE 3 -->
-<div class="card">
-<h2>Ej8 - Usuario</h2>
-<button onclick="uiEj8()">Mostrar</button>
-<p id="r8"></p>
-</div>
+        <div id="e9" class="card" style="display: none;">
+            <h3>9. Activar Usuario</h3>
+            <button onclick="activarUsuario()">Probar</button>
+            <p id="EJ9"></p>
+        </div>
 
-<div class="card">
-<h2>Ej9 - Activar usuario</h2>
-<button onclick="uiEj9()">Activar</button>
-<p id="r9"></p>
-</div>
+        <div id="e10" class="card" style="display: none;">
+            <h3>10. Precio Total</h3>
+            <button onclick="precioTotal()">Probar</button>
+            <p id="EJ10"></p>
+        </div>
 
-<div class="card">
-<h2>Ej10 - Total productos</h2>
-<button onclick="uiEj10()">Calcular</button>
-<p id="r10"></p>
-</div>
+        <div id="e11" class="card" style="display: none;">
+            <h3>11. Map</h3>
+            <button onclick="ejercicioMap()">Probar</button>
+            <p id="EJ11"></p>
+        </div>
 
-<!-- PARTE 4 -->
-<div class="card">
-<h2>Ej11 - map</h2>
-<button onclick="uiEj11()">Mostrar</button>
-<p id="r11"></p>
-</div>
+        <div id="e12" class="card" style="display: none;">
+            <h3>12. Filter</h3>
+            <button onclick="ejercicioFilter()">Probar</button>
+            <p id="EJ12"></p>
+        </div>
 
-<div class="card">
-<h2>Ej12 - filter</h2>
-<button onclick="uiEj12()">Mostrar</button>
-<p id="r12"></p>
-</div>
+        <div id="e13" class="card" style="display: none;">
+            <h3>13. Reduce</h3>
+            <button onclick="ejercicioReduce()">Probar</button>
+            <p id="EJ13"></p>
+        </div>
 
-<div class="card">
-<h2>Ej13 - reduce</h2>
-<button onclick="uiEj13()">Mostrar</button>
-<p id="r13"></p>
-</div>
+        <div id="e14" class="card" style="display: none;">
+            <h3>14. Destructuring</h3>
+            <button onclick="destructuringProducto()">Probar</button>
+            <p id="EJ14"></p>
+        </div>
 
-<!-- PARTE 5 -->
-<div class="card">
-<h2>Ej14 - Destructuring</h2>
-<button onclick="uiEj14()">Mostrar</button>
-<p id="r14"></p>
-</div>
+        <div id="e15" class="card" style="display: none;">
+            <h3>15. Spread</h3>
+            <button onclick="spreadOperator()">Probar</button>
+            <p id="EJ15"></p>
+        </div>
 
-<div class="card">
-<h2>Ej15 - Spread</h2>
-<button onclick="uiEj15()">Mostrar</button>
-<p id="r15"></p>
-</div>
+        <div id="e16" class="card" style="display: none;">
+            <h3>16. Buscar Producto</h3>
+            <input id="nombreProducto" placeholder="Nombre del producto">
+            <button onclick="buscarProducto()">Probar</button>
+            <p id="EJ16"></p>
+        </div>
 
-<!-- PARTE 6 -->
-<div class="card">
-<h2>Ej16 - Buscar producto</h2>
-<input id="buscar" placeholder="Mouse">
-<button onclick="uiEj16()">Buscar</button>
-<p id="r16"></p>
-</div>
+        <div id="e17" class="card" style="display: none;">
+            <h3>17. Productos Caros</h3>
+            <button onclick="productosCaros()">Probar</button>
+            <p id="EJ17"></p>
+        </div>
 
-<div class="card">
-<h2>Ej17 - Productos caros</h2>
-<button onclick="uiEj17()">Mostrar</button>
-<p id="r17"></p>
-</div>
+        <div id="e18" class="card" style="display: none;">
+            <h3>18. Promedio</h3>
+            <input id="arrayPromedio" placeholder="1,2,3,4">
+            <button onclick="promedio()">Probar</button>
+            <p id="EJ18"></p>
+        </div>
 
-<div class="card">
-<h2>Ej18 - Promedio</h2>
-<input id="arr4" placeholder="10,8,6,9">
-<button onclick="uiEj18()">Calcular</button>
-<p id="r18"></p>
-</div>
+        <div id="de" class="card" style="display: none;">
+            <h3>Desafío Usuarios</h3>
+            <button onclick="obtenerUsuarios()">Ver todos</button>
+            <button onclick="mostrarID()">Mostrar por ID</button>
+            <button onclick="obtenerMayores()">Mostrar mayores de edad</button>
+            <button onclick="mostrarCrear()">Crear Usuario</button>
 
-<!-- API -->
-<div class="card">
-<h2>Desafío API</h2>
+            <input id="inputIdUsuario" placeholder="ID del usuario" style="display: none;">
+            <button id="botonMostrarId" onclick="obtenerUsuarioPorId()" style="display: none;">Mostrar</button>
 
-<button onclick="uiAPI1()">Ver usuarios</button>
+            <input id="inputNombreUsuario" placeholder="Nombre" style="display: none;">
+            <input id="inputEdadUsuario" placeholder="Edad" style="display: none;">
+            <button id="botonCrearUsuario" onclick="crearUsuario()" style="display: none;">Crear</button>
 
-<input id="idApi" placeholder="ID">
-<button onclick="uiAPI2()">Buscar</button>
+            <p id="EJDESAFIO"></p>
+        </div>
+    </main>
 
-<input id="nameApi" placeholder="Nombre">
-<input id="edadApi" placeholder="Edad">
-<button onclick="uiAPI3()">Crear</button>
-
-<p id="rApi"></p>
-</div>
-
-<script src="tp1.js"></script>
+    <script src="tp1.js"></script>
 </body>
 </html>
